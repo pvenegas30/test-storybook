@@ -6,6 +6,7 @@ const Card = ({ title, showSub, background, imgUrl, children }: any): JSX.Elemen
     <div className="flex justify-center">
       <div
         className={`flex flex-col md:flex-row md:max-w-xl rounded-lg bg-${background} shadow-lg`}
+        style={{backgroundColor: background}}
       >
         <img
           className=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
