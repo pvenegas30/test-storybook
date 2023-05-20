@@ -6,11 +6,7 @@ const meta: Meta<typeof NavBar> = {
   title: 'Components/Navbar',
   component: NavBar,
   tags: ['autodocs'],
-  argTypes: {
-    backgroundColor: {
-      control: 'color',
-    },
-  },
+
 };
 
 export default meta;
@@ -26,5 +22,6 @@ export const Primary: Story = {
       projects: 'Projects',
       blogs: 'Blogs',
       background: "black",
+      textcolor: 'white'
     },
   };

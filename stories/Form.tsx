@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import "./globals.css";
 import { Button } from "./Button";
 import PropTypes from "prop-types";
+
 const defaultFormData = {
   name: "",
   lastname: "",
@@ -13,7 +14,7 @@ const defaultFormData = {
   message: ""
 };
 
-const Form = ({ title, first, last, mail, tel, text, topic }: any): JSX.Element => {
+const Form = ({ title, first, last, mail, tel, text, topic, background, textcolor, inputcolor }: any): JSX.Element => {
 
   const [formData, setFormData] = useState(defaultFormData);
   const { name, lastname, email, phone, message, subject } = formData;
@@ -33,7 +34,8 @@ const Form = ({ title, first, last, mail, tel, text, topic }: any): JSX.Element 
   };
 
   return (
-    <div className='container bg-white m-auto flex flex-col justify-center w-full h-full px-3 lg:w-[50%] lg:pb-[200px] lg:px-[50px] '>
+    <div className='container bg-white m-auto mb-20 flex flex-col justify-center w-full h-full px-3 lg:w-[50%] lg:pb-300px] lg:px-[50px] 
+    '>
       <div id='contact' className='w-full lg:h-screen'>
         <div className='max-w-[1000px] px-2 py-2 w-full '>
           <h2 className='text-center font-bold  mb-0 pb-0 text-xl sm:text-2xl tracking-[8px] text-black'>
@@ -41,12 +43,13 @@ const Form = ({ title, first, last, mail, tel, text, topic }: any): JSX.Element 
           </h2>
 
           <div className='flex w-full'>
-            <div className='bg-white w-full h-auto '>
+            <div className='w-full h-auto rounded-md pb-[70px] px-[15px] lg:px-[30px]' style={{backgroundColor: background}}>
               <div className='pt-4 px-8 lg:px-3 '>
                 
                 <form
                   onSubmit={onSubmit}
-                  className="w-full text-black"
+                  className="w-full text-black font-bold"
+                  style={{color: textcolor}}
                   method='POST'
                 >
                     <div  className='flex flex-col'>
@@ -54,6 +57,7 @@ const Form = ({ title, first, last, mail, tel, text, topic }: any): JSX.Element 
                         {first}
                       </label>
                       <input
+                        style={{background: inputcolor}}
                         maxLength={15}
                         value={name}
                         id="name"
@@ -69,6 +73,7 @@ const Form = ({ title, first, last, mail, tel, text, topic }: any): JSX.Element 
                         {last}
                       </label>
                       <input
+                        style={{background: inputcolor}}
                         maxLength={15}
                         value={lastname}
                         id="lastname"
@@ -84,6 +89,7 @@ const Form = ({ title, first, last, mail, tel, text, topic }: any): JSX.Element 
                         {tel}
                       </label>
                       <input
+                        style={{background: inputcolor}}
                         maxLength={12}
                         value={phone}
                         id="phone"
@@ -100,6 +106,7 @@ const Form = ({ title, first, last, mail, tel, text, topic }: any): JSX.Element 
                       {mail}
                     </label>
                     <input
+                      style={{background: inputcolor}}
                       maxLength={30}
                       value={email}
                       id="email"
@@ -115,6 +122,7 @@ const Form = ({ title, first, last, mail, tel, text, topic }: any): JSX.Element 
                       {topic}
                     </label>
                     <input
+                      style={{background: inputcolor}}
                       maxLength={25}
                       value={subject}
                       id="subject"
@@ -130,6 +138,7 @@ const Form = ({ title, first, last, mail, tel, text, topic }: any): JSX.Element 
                       {text}
                     </label>
                     <textarea
+                      style={{background: inputcolor}}
                       maxLength={60}
                       value={message}
                       id="message"
@@ -166,5 +175,7 @@ Form.PropTypes = {
   mail: PropTypes.string, 
   tel: PropTypes.string, 
   text: PropTypes.string, 
-  topic: PropTypes.string
+  topic: PropTypes.string,
+  textcolor: PropTypes.string,
+  inputcolor: PropTypes.string
 };

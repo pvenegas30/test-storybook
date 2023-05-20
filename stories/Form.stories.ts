@@ -5,12 +5,7 @@ import Form from './Form';
 const meta: Meta<typeof Form> = {
   title: 'Components/Form',
   component: Form,
-  tags: ['autodocs'],
-  argTypes: {
-    backgroundColor: {
-      control: 'color',
-    },
-  },
+  tags: ['autodocs']
   
 };
 
@@ -20,6 +15,7 @@ type Story = StoryObj<typeof Form>;
 
 export const Primary: Story = {
     args: {
+      background: 'white',
       lable: 'Form',
       title: 'FORM',
       first: 'FIRST NAME', 
@@ -27,6 +23,8 @@ export const Primary: Story = {
       mail: 'EMAIL', 
       tel: 'PHONE', 
       text: 'MESSAGE', 
-      topic: 'SUBJECT'
+      topic: 'SUBJECT',
+      textcolor: 'black',
+      inputcolor: 'white'
     },
   };

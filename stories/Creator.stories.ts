@@ -5,13 +5,7 @@ import Creator from './Creator';
 const meta: Meta<typeof Creator> = {
   title: 'Components/Creator',
   component: Creator,
-  tags: ['autodocs'],
-  argTypes: {
-    
-    backgroundColor: {
-      control: 'color',
-    },
-  },
+  tags: ['autodocs']
   
 };
 
@@ -24,6 +18,9 @@ export const Primary: Story = {
         title: 'Write your homework for the day!',
         children: 'Save',
         lable: 'taskcreator',
-        backgroundColor:'white'
+        background:'white',
+        textcolor: 'black',
+        inputcolor: '#aad5c0',
+        buttoncolor: '#2cb72c'
     },
   };
